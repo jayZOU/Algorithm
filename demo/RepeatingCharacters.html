@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Repeating Characters</title>
+</head>
+<body>
+	<script>
+        var lengthOfLongestSubstring = function(s) {
+          if(s === "") return 0;
+          var res,
+              current = 1,
+              len = s.length,
+              max = 1;
+
+          for(var i = 1; i < len + 1; i++){
+            res = s.substr(i - current, current).indexOf(s.substr(i, 1));
+            // console.log(str.indexOf());
+            if(res > -1){
+              if(max < current) {
+                max = current;
+              }
+              current -= res;
+                
+            }else{
+              current ++;
+            }
+          }
+
+          return max
+
+        }
+        console.log(lengthOfLongestSubstring("abcabcbb"));
+        console.log(lengthOfLongestSubstring("aab"));
+        console.log(lengthOfLongestSubstring("bb"));
+        console.log(lengthOfLongestSubstring("au"));
+        console.log(lengthOfLongestSubstring("dvdf"));
+        console.log(lengthOfLongestSubstring("abba"));
+        console.log(lengthOfLongestSubstring("jbpnbwwd"));
+	</script>
+</body>
+</html>
