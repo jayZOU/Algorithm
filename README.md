@@ -135,3 +135,49 @@ Your runtime beats 96.27% of javascript submissions.
 
 (from [https://leetcode.com/problems/longest-substring-without-repeating-characters/](https://leetcode.com/problems/longest-substring-without-repeating-characters/))
 
+##Median of Two Sorted Arrays
+There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
+
+```js
+var findMedianSortedArrays = function(nums1, nums2) {
+    var len1 = nums1.length,
+        len2 = nums2.length,
+        arr = [],
+        iseven = !((len1 + len2) % 2),
+        current1 = 0,
+        current2 = 0,
+        loop = Math.floor((len1 + len2) / 2) + 1;
+
+    for (var i = 0; i < loop; i++) {
+        if (current1 == len1) {
+            arr.push(nums2[current2]);
+            current2++;
+            continue;
+        }
+
+        if (current2 == len2) {
+            arr.push(nums1[current1]);
+            current1++;
+            continue;
+        }
+
+        if (nums1[current1] < nums2[current2]) {
+            arr.push(nums1[current1]);
+            current1++;
+        } else {
+            arr.push(nums2[current2]);
+            current2++;
+        }
+    }
+    return iseven ? (arr.pop() + arr.pop()) / 2 : arr.pop();
+}
+```
+2079 / 2079 test cases passed.
+
+Status: Accepted
+
+Runtime: 300 ms
+
+Your runtime beats 74.14% of javascript submissions.
+
+(from [https://leetcode.com/problems/median-of-two-sorted-arrays/](https://leetcode.com/problems/median-of-two-sorted-arrays/))
