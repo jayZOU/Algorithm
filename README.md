@@ -1,7 +1,7 @@
 # Algorithm
 algorithm demo from [https://github.com/xidui/algorithm-training](https://github.com/xidui/algorithm-training)
 
-## Overview
+### Overview
 
 * [Two Sum](#Two-Sum)
 * [Add Two Numbers](#Add-Two-Numbers)
@@ -10,6 +10,7 @@ algorithm demo from [https://github.com/xidui/algorithm-training](https://github
 
 Two Sum
 ---
+
 Given an array of integers, find two numbers such that they add up to a specific target number.
 
 The function twoSum should return indices of the two numbers such that they add up to the target, where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based.
@@ -53,6 +54,7 @@ Your runtime beats 39.62% of javascript submissions.
 
 Add Two Numbers
 ---
+
 You are given two linked lists representing two non-negative numbers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
 
 Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
@@ -107,6 +109,7 @@ Your runtime beats 96.10% of javascript submissions.
 
 Longest Substring Without Repeating Characters
 ---
+
 Given a string, find the length of the longest substring without repeating characters. For example, the longest substring without repeating letters for "abcabcbb" is "abc", which the length is 3. For "bbbbb" the longest substring is "b", with the length of 1.
 
 ```js
@@ -147,6 +150,7 @@ Your runtime beats 96.27% of javascript submissions.
 
 Median of Two Sorted Arrays
 ---
+
 There are two sorted arrays nums1 and nums2 of size m and n respectively. Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
 
 ```js
