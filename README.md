@@ -3,10 +3,10 @@ algorithm demo from [https://github.com/xidui/algorithm-training](https://github
 
 ## Overview
 
-* [Two Sum](#Two Sum)
-* [Add Two Numbers](#Add Two Numbers)
-* [Longest Substring Without Repeating Characters](#Longest Substring Without Repeating Characters)
-* [Median of Two Sorted Arrays](#Median of Two Sorted Arrays)
+* [Two Sum](#Two-Sum)
+* [Add Two Numbers](#Add-Two-Numbers)
+* [Longest Substring Without Repeating Characters](#Longest-Substring-Without Repeating-Characters)
+* [Median of Two Sorted Arrays](#Median-of-Two-Sorted-Arrays)
 
 Two Sum
 ---
