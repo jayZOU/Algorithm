@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ZigZag Conversion</title>
+</head>
+<body>
+	<script>
+		/**
+		 * @param {string} s
+		 * @param {number} numRows
+		 * @return {string}
+		 */
+		var convert = function(s, numRows) {
+		    var res = "",
+		    	len = s.length;				//总长度
+		    if(numRows == 1 || numRows == 0) return s;
+		    //外层循环判断第几行
+		    //内层循环判断行距
+		    for(var i = 0; i < numRows; i++){
+		    	var isUp = false;
+		    	for(var j = i; j < len;) {
+		    		res += s[j];
+		    		if(i == 0){
+		    			j += 2*(numRows - i - 1);
+		    			continue;
+		    		} 
+		    		if(i == numRows - 1){
+		    			j += 2 * i;
+		    			continue;
+		    		}
+		    		if(isUp){
+		    			j += 2 * i;
+		    			isUp = false;
+		    		}else{
+		    			j += 2*(numRows - i - 1);
+		    			isUp = true;
+		    		}
+		    	}
+		    }
+		    return res;
+		};
+
+		// console.log(convert("PAYPALISHIRING", 5));
+		console.log(convert("AB", 2));
+	</script>
+</body>
+</html>

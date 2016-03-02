@@ -7,6 +7,7 @@ algorithm demo from [https://github.com/xidui/algorithm-training](https://github
 * [Add Two Numbers](#Add-Two-Numbers)
 * [Longest Substring Without Repeating Characters](#Longest-Substring-Without Repeating-Characters)
 * [Median of Two Sorted Arrays](#Median-of-Two-Sorted-Arrays)
+* [ZigZag Conversion](#ZigZag Conversion)
 
 Two Sum
 ---
@@ -196,3 +197,63 @@ Runtime: 300 ms
 Your runtime beats 74.14% of javascript submissions.
 
 (from [https://leetcode.com/problems/median-of-two-sorted-arrays/](https://leetcode.com/problems/median-of-two-sorted-arrays/))
+
+
+ZigZag Conversion
+---
+
+The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility) 
+
+    P   A   H   N
+    A P L S I I G
+    Y   I   R
+And then read line by line: "PAHNAPLSIIGYIR"
+
+```js
+/**
+ * @param {string} s
+ * @param {number} numRows
+ * @return {string}
+ */
+var convert = function(s, numRows) {
+    var res = "",
+        len = s.length; //总长度
+    if (numRows == 1 || numRows == 0) return s;
+    //外层循环判断第几行
+    //内层循环判断行距
+    for (var i = 0; i < numRows; i++) {
+        var isUp = false;
+        for (var j = i; j < len;) {
+            res += s[j];
+            if (i == 0) {
+                j += 2 * (numRows - i - 1);
+                continue;
+            }
+            if (i == numRows - 1) {
+                j += 2 * i;
+                continue;
+            }
+            if (isUp) {
+                j += 2 * i;
+                isUp = false;
+            } else {
+                j += 2 * (numRows - i - 1);
+                isUp = true;
+            }
+        }
+    }
+    return res;
+};
+```
+1158 / 1158 test cases passed.
+
+Status: Accepted
+
+Runtime: 188 ms
+
+2079 / 2079 test cases passed.
+
+Your runtime beats 91.00% of javascriptsubmissions.
+
+(from [https://leetcode.com/problems/zigzag-conversion/](https://leetcode.com/problems/zigzag-conversion/))
+
