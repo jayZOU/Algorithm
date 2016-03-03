@@ -8,6 +8,7 @@ algorithm demo from [https://github.com/xidui/algorithm-training](https://github
 * [Longest Substring Without Repeating Characters](#Longest-Substring-Without Repeating-Characters)
 * [Median of Two Sorted Arrays](#Median-of-Two-Sorted-Arrays)
 * [ZigZag Conversion](#ZigZag Conversion)
+* [Reverse Integer](#Reverse Integer)
 
 Two Sum
 ---
@@ -257,3 +258,40 @@ Your runtime beats 91.00% of javascriptsubmissions.
 
 (from [https://leetcode.com/problems/zigzag-conversion/](https://leetcode.com/problems/zigzag-conversion/))
 
+
+Reverse Integer
+---
+
+Reverse digits of an integer.
+
+    Example1: x = 123, return 321
+    Example2: x = -123, return -321 
+
+```js
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var reverse = function(x) {
+    var nx = x + "",
+        res = "";
+    for (var i = nx.length - 1; i >= 0; i--) {
+        if (i == 0 && nx[i] == "-") {
+            res = "-" + res;
+        } else {
+            res += nx[i];
+        }
+    }
+    if (res * 1 > 2147483647 || res * 1 < -2147483648) return 0;
+    return res * 1;
+};
+```
+1032 / 1032 test cases passed.
+
+Status: Accepted
+
+Runtime: 168 ms
+
+Your runtime beats 91.51% of javascriptsubmissions.
+
+(from [https://leetcode.com/problems/reverse-integer/](https://leetcode.com/problems/reverse-integer/))
