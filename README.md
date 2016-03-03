@@ -9,6 +9,7 @@ algorithm demo from [https://github.com/xidui/algorithm-training](https://github
 * [Median of Two Sorted Arrays](#Median-of-Two-Sorted-Arrays)
 * [ZigZag Conversion](#ZigZag Conversion)
 * [Reverse Integer](#Reverse Integer)
+* [Palindrome Number](#Palindrome Number)
 
 Two Sum
 ---
@@ -295,3 +296,61 @@ Runtime: 168 ms
 Your runtime beats 91.51% of javascriptsubmissions.
 
 (from [https://leetcode.com/problems/reverse-integer/](https://leetcode.com/problems/reverse-integer/))
+
+
+Palindrome Number
+---
+
+Determine whether an integer is a palindrome. Do this without extra space.
+
+```js
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+    if (x < 0) return false;
+    if (x == 0) return true;
+    var nx = x + "",
+        len = nx.length;
+    forNum = Math.floor(len / 2);
+    for (var i = 0; i < forNum; i++) {
+        if (nx[i] != nx[len - i - 1]) return false;
+    }
+    return true;
+};
+
+//or
+
+var isPalindrome1 = function(x) {
+    if (x < 0) return false;
+    if (x == 0) return true;
+    var nx = x,
+        y = 0;
+    while (x > 0) {
+        y = Math.floor(y * 10 + x % 10);
+        // console.log(y);
+        x = Math.floor(x / 10);
+        // console.log(x);
+    }
+
+    return y == nx;
+
+    // console.log(y);
+}
+
+//or
+
+var isPalindrome2 = function(x) {
+    return (x + "").split("").reverse().join("") == (x + "");
+}
+```
+11506 / 11506 test cases passed.
+
+Status: Accepted
+
+Runtime: 708 ms
+
+Your runtime beats 80.73% of javascriptsubmissions.
+
+(from [https://leetcode.com/problems/palindrome-number/](https://leetcode.com/problems/palindrome-number/))
